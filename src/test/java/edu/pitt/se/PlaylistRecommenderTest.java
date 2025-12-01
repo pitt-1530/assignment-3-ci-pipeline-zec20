@@ -15,7 +15,7 @@ public class PlaylistRecommenderTest {
 
     @Test
     void testClassifyEnergyMedium() {
-        assertEquals("MEDIUM", PlaylistRecommender.classifyClassifyEnergy(Arrays.asList(100, 120)));
+        assertEquals("MEDIUM", PlaylistRecommender.classifyEnergy(Arrays.asList(100, 120)));
     }
 
     @Test
@@ -34,7 +34,6 @@ public class PlaylistRecommenderTest {
         assertThrows(IllegalArgumentException.class,
                 () -> PlaylistRecommender.classifyEnergy(Collections.emptyList()));
     }
-
 
     @Test
     void testValidTrackTitle() {
@@ -55,7 +54,6 @@ public class PlaylistRecommenderTest {
     void testInvalidTrackTitleSpecialChars() {
         assertFalse(PlaylistRecommender.isValidTrackTitle("Song#1"));
     }
-
 
     @Test
     void testNormalizeVolumeWithinRange() {
